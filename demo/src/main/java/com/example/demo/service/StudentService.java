@@ -29,5 +29,11 @@ public class StudentService {
         }
         return res;
     }
-    //check update
+    public boolean deleteStudentById(int id) {
+        if (studentRepo.existsById(id)) {
+            studentRepo.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
